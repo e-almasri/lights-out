@@ -1,20 +1,64 @@
+.app {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .light {
   width: 50px;
   height: 50px;
-  border: 1px dotted black;
+  border: 1px solid navajowhite;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.light:hover {
+  transform: scale(1.05);
 }
 
 .light-on {
-    background-color: lightgreen;
+  background: #AFCA7C;
+  color: #145791;
 }
 
 .light-off {
-    background-color: grey;
-    color: white;
+  background: white;
+  color: black;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 50px);
-  gap: 5px;
+  gap: 2px;
+}
+
+.btn {
+  padding: 10px 18px;
+  margin: 6px;
+  border-radius: 6px;
+  background: #145791;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background: #AFCA7C;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.moves {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.header {
+  font-size: 25px;
+  margin: 20px;
 }

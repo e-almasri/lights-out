@@ -75,11 +75,30 @@ function Game() {
 
   return (
     <>
+      <div className="header">
+        <h1>Lights Out</h1>
+        <p>
+          Click a light to toggle it and the adjacent lights. Turn off all the
+          lights to win!
+        </p>
+      </div>
+
       <Grid lights={lights} handleClick={handleClick}></Grid>
-      <button onClick={undo}>undo</button>
-      <p>{checkWin(lights) ? "You win!" : "Moves: " + count}</p>
-      <button onClick={newGame}>new Game</button>
-      <button onClick={reset}>reset</button>
+
+      <p className="moves">
+        {checkWin(lights) ? "You win!" : "Moves: " + count}
+      </p>
+      <div className="controls">
+        <button className="btn" onClick={undo}>
+          Move back
+        </button>
+        <button className="btn" onClick={newGame}>
+          New Game
+        </button>
+        <button className="btn" onClick={reset}>
+          Reset
+        </button>
+      </div>
     </>
   );
 }
