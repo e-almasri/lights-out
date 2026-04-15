@@ -1,16 +1,63 @@
-# React + Vite
+# Lights Out Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small puzzle game built with React + Vite.
 
-Currently, two official plugins are available:
+## Goal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Turn off all lights on the board.
 
-## React Compiler
+When you click a tile:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* it toggles itself
+* it toggles its neighbors (up, down, left, right)
 
-## Expanding the ESLint configuration
+Try to solve the board in as few moves as possible.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Live Demo
+
+Play here:
+
+[https://lights-out-two.vercel.app/](https://lights-out-two.vercel.app/)
+
+
+---
+
+## Features
+
+* 5×5 puzzle grid
+* move counter
+* undo last move
+* reset current game
+* generate new random board
+* win detection
+
+---
+
+
+## Run locally
+
+Clone project:
+
+```bash
+git clone https://github.com/e-almasri/lights-out.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start dev server:
+
+```bash
+npm run dev
+```
+
+Open:
+
+[http://localhost:5173](http://localhost:5173)
+
+---
