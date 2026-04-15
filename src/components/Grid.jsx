@@ -1,5 +1,6 @@
 import Light from "./Light";
 
+// renders grid layout and passes click events to lights
 function Grid({ lights, handleClick }) {
   return (
     <div className="grid">

@@ -1,3 +1,4 @@
+// represents a single light tile in the board
 function Light({value, onLightClick}) {
 
     return (
