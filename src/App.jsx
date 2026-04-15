@@ -1,8 +1,8 @@
 import './App.css'
-import Light from './components/Light'
+import Grid from './components/Grid'
 
 function App() {
-  return <Light />;
+  return <Grid />;
 }
 
 export default App

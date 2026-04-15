@@ -2,15 +2,10 @@ import { useState } from "react";
 import "../App.css";
 
 
-function Light(){
-    const [value, setValue] = useState(false);
-    
-    function handleClick(){
-        setValue(prev => !prev);
-    }
+function Light({value, onLightClick}) {
 
     return (
-        <button className={`light ${value ? "light-on" : "light-off"}`} onClick={handleClick}>{value? "ON" : "OFF"}</button>
+        <button className={`light ${value ? "light-on" : "light-off"}`} onClick={onLightClick}>{value? "ON" : "OFF"}</button>
     );
 }
 
