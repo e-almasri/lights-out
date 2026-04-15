@@ -2,23 +2,21 @@ import { useState } from "react";
 import Light from "./Light";
 
 function Grid() {
-  const [lights, setLights] = useState(Array(25).fill(false));
+  const [lights, setLights] = useState(initLights(Array(25).fill(false)));
   const [count, setCount] = useState(0);
 
   function handleClick(index) {
     // if (checkWin(lights)) {
     //   return;
     // }
-    let newLights = lights.slice();
-    newLights[index] = !newLights[index];
-    toggleAdjacent(index).forEach((element) => {
-      newLights[element] = !newLights[element];
-    });
+    let newLights = toggleAdjacent(lights, index);
     setLights(newLights);
     setCount(count + 1);
   }
 
-  function toggleAdjacent(index) {
+  function toggleAdjacent(lights, index) {
+    let newLights = lights.slice();
+    newLights[index] = !newLights[index];
     const adjacentIndices = [];
     if (index % 5 > 0) {
       adjacentIndices.push(index - 1);
@@ -32,7 +30,20 @@ function Grid() {
     if (index < 20) {
       adjacentIndices.push(index + 5);
     }
-    return adjacentIndices;
+    adjacentIndices.forEach((element) => {
+      newLights[element] = !newLights[element];
+    });
+    return newLights;
+  }
+
+  function initLights(lights) {
+    let newLights = lights.slice();
+    for (let i = 0; i < lights.length; i++) {
+      if (Math.random() < 0.5) {
+        newLights = toggleAdjacent(newLights, i);
+      }
+    }
+    return newLights;
   }
 
   function checkWin(lights) {
@@ -50,9 +61,7 @@ function Grid() {
           />
         ))}
       </div>
-      <p>
-        {checkWin(lights) ? "You win!" : "Moves: " + count}
-      </p>
+      <p>{checkWin(lights) ? "You win!" : "Moves: " + count}</p>
     </>
   );
 }

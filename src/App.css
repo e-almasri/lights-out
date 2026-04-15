@@ -5,11 +5,12 @@
 }
 
 .light-on {
-    background-color: white;
+    background-color: lightgreen;
 }
 
 .light-off {
     background-color: grey;
+    color: white;
 }
 
 .grid {
